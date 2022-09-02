@@ -8,7 +8,17 @@ const loadPhones = (searchText) =>{
 const displayPhones = phones =>{
     const phonesContainer = document.getElementById('phone-container');
     phonesContainer.innerHTML = '';
-    phones = phones.slice(0, 9);
+
+    //Show 9 Phones Only
+    const showAll = document.getElementById('show-all');
+    if(phones.length > 10){
+      phones = phones.slice(0, 9);
+      showAll.classList.remove('d-none');
+    }
+    else{
+      showAll.classList.add('d-none');
+
+    }
 
     //Display No Phone 
       const noPhone = document.getElementById('no-found-message');
@@ -65,5 +75,14 @@ const toggleSpinner = isLoading => {
 
   }
 }
+
+//Not the best way to show all 
+document.getElementById('btn-show-all').addEventListener('click', function(){
+  toggleSpinner(true);
+
+  const searchField = document.getElementById('search-field');
+  const searchText = searchField.value;
+  loadPhones(searchText);
+})
 
 // loadPhones();
