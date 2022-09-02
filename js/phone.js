@@ -8,8 +8,25 @@ const loadPhones = (searchText) =>{
 const displayPhones = phones =>{
     const phonesContainer = document.getElementById('phone-container');
     phonesContainer.innerHTML = '';
+    phones = phones.slice(0, 9);
+
+    //Display No Phone 
+      const noPhone = document.getElementById('no-found-message');
+      
+      if(phones.length === 0){
+        noPhone.classList.remove('d-none');
+      }
+      else{
+        // noPhone.innerHTML = ''; Also we can use bottom codes
+        noPhone.classList.add('d-none');
+
+      }
+      
+    //Display All Phone
+
+
     phones.forEach(phone => {
-        console.log(phone);
+        // console.log(phone);
         const phoneDiv = document.createElement('div');
         phoneDiv.classList.add('col');
         phoneDiv.innerHTML = `

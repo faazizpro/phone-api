@@ -10,7 +10,7 @@
     <header>
         <h1>Welcome To The Phone API</h1>
     </header>
-    <main class="container">
+    <main class="container mb-5">
       <section>
         <div class="mb-3 w-50">
           <input id="search-field" type="text" class="form-control text-center fw-bolder" id="exampleFormControlInput1" placeholder="Search Phone">
@@ -20,6 +20,10 @@
       <!-- Display Search Results -->
         <section>
             <div id="phone-container" class="row row-cols-1 row-cols-md-3 g-5">
+            </div>
+
+            <div id="no-found-message" class="mt-5 d-none">
+              <h3  class="text-warning">No Phone Found. Please Try A New Search</h3>
             </div>
         </section>
     </main>
